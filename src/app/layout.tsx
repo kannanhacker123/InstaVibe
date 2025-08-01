@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import NavBar from "@/components/NavBar";
 import SideBar, { UnAuthSidebar } from "@/components/SideBar";
 import { Toaster } from "react-hot-toast";
+import BottomNavBar from "@/components/BottomNavBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,7 +36,7 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <div className="min-w-screen">
               <NavBar />
-              <main className="py-8">
+              <main className="py-8 pb-24 md:pb-8">
                 {/* container to center the content */}
                 <div className="max-w-7xl mx-auto px-4">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -59,6 +60,7 @@ export default function RootLayout({
               </main>
             </div>
             <Toaster />
+            <BottomNavBar />
           </ThemeProvider>
         </body>
       </html>
