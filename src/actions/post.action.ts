@@ -75,6 +75,38 @@ export async function getPosts() {
     }
 }
 
+export async function getAllPosts() {
+  return await prisma.post.findMany({
+    include: {
+      author: {
+        select: {
+          id: true,
+          name: true,
+          username: true,
+          img: true,
+        },
+      },
+      comments: {
+        include: {
+          author: {
+            select: {
+              id: true,
+              name: true,
+              username: true,
+              img: true,
+            },
+          },
+        },
+      },
+      likes: true,
+      _count: true,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+}
+
 export async function toggleLike(postId: string) {
     try {
       const userId = await getDbUserId();

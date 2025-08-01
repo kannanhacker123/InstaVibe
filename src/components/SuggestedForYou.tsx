@@ -12,7 +12,12 @@ const SuggestedForYou = async () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Suggested For You</CardTitle>
+        <div className="flex justify-between items-center">
+          <CardTitle>Suggested For You</CardTitle>
+          <Link href="/explore" className="text-primary text-sm font-semibold hover:underline">
+            See all
+          </Link>
+        </div>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">

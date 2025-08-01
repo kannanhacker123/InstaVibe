@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/", icon: Home, label: "Home" },
-  { href: "/search", icon: Search, label: "Search" },
+  { href: "/explore", icon: Search, label: "Explore" },
   { href: "/create", icon: PlusSquare, label: "Create" },
   { href: "/notifications", icon: Heart, label: "Notifications" },
   { href: "/profile", icon: User, label: "Profile" },
